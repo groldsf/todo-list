@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo list</title>
+</head>
+<body>
+    <form method="post">
+        <p>
+            <label>
+                <input name="author">
+            </label>
+            <label>
+                <input name="text">
+            </label>
+        </p>
+        <p><input type="submit" value="add"></p>
+    </form>
+    <form>
+        <p>
+            <label>
+                <input name="search">
+            </label>
+        </p>
+        <p><input type="submit" value="search"></p>
+    </form>
+    <div>
+        {{#messages}}
+            author: {{author}}
+            <br>
+            text: {{text}}
+            <br>
+            <form method=post action="/delete">
+                <input name="id" value={{id}} type="hidden">
+                <p><input type="submit" value="delete"></p>
+            </form>
+        {{/messages}}
+    </div>
+</body>
+</html>
